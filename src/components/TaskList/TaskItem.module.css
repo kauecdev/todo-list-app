@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container input[type=checkbox] {
+  appearance: none;
+}
+
+.checkbox {
+  text-align: center;
+
+  cursor: pointer;
+  display: block;
+  width: 1.10rem;
+  height: 1.10rem;
+  border-radius: 100%;
+  border: 3px solid var(--blue);
+
+  transition: all 0.2s;
+}
+
+.checkbox:hover {
+  border: 3px solid var(--blue-dark);
+  background-color: color-mix(in srgb, var(--blue-dark) 20%, transparent);
+}
+
+.checkboxChecked {
+  text-align: center;
+
+  cursor: pointer;
+  display: block;
+  width: 1.10rem;
+  height: 1.10rem;
+  border-radius: 100%;
+  background-color: var(--purple-dark);
+  color: var(--gray-100);
+
+  transition: all 0.2s;
+}
+
+.checkboxChecked:hover {
+  background-color: var(--purple);
+}
+
+.paragraphChecked {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.deleteButton {
+  padding: 0.3125rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton svg {
+  margin: auto;
+  line-height: 0;
+}
+
+.deleteButton:hover {
+  background-color: var(--gray-400);
+  color: var(--danger);
+}

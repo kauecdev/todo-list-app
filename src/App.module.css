@@ -33,3 +33,42 @@
 .todoInputContainer button:hover {
   background-color: var(--blue);
 }
+
+.taskContainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.taskContainer header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskContainer header > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.taskContainer header > span:first-of-type {
+  color: var(--blue);
+}
+
+.taskContainer header > span:last-of-type {
+  color: var(--purple);
+}
+
+.counter {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+
+  padding: 0.125rem 0.5rem;
+}
