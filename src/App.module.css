@@ -1,0 +1,35 @@
+.container {
+  max-width: 46rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todoInputContainer {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  transform: translateY(-50%);
+}
+
+.todoInputContainer button {
+  border: 0;
+  cursor: pointer;
+  background-color: var(--blue-dark);
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  transition: background-color 0.2s;
+}
+
+.todoInputContainer button:hover {
+  background-color: var(--blue);
+}
