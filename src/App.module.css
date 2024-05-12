@@ -2,6 +2,7 @@
   max-width: 46rem;
   width: 100%;
   margin: 0 auto;
+  padding: 0 0 2rem;
 }
 
 .todoInputContainer {
@@ -32,6 +33,12 @@
 
 .todoInputContainer button:hover {
   background-color: var(--blue);
+}
+
+.todoInputContainer button:disabled {
+  color: color-mix(in srgb, var(--gray-100) 60%, transparent);
+  background-color: color-mix(in srgb, var(--blue) 60%, transparent);
+  cursor: not-allowed;
 }
 
 .taskContainer {

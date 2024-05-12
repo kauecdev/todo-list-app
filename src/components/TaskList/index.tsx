@@ -1,6 +1,7 @@
 import { Task } from '../../App'
 import { NoTasksMessage } from './NoTasksMessage'
 import { TaskItem } from './TaskItem'
+import styles from './TaskList.module.css'
 
 interface TaskListProps {
   tasks: Task[]
@@ -14,8 +15,8 @@ export function TaskList({
   onDeleteTask,
 }: TaskListProps) {
   return tasks.length > 0 ? (
-    <article className="">
-      <ul>
+    <article>
+      <ul className={styles.list}>
         {tasks.map((task) => (
           <TaskItem
             key={task.id}

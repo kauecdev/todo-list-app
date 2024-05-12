@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 import { Input } from './components/Input'
 
 import styles from './App.module.css'
-import { useState } from 'react'
+import { ChangeEvent, KeyboardEvent, useState } from 'react'
 import { TaskList } from './components/TaskList'
 
 export interface Task {
@@ -14,14 +14,26 @@ export interface Task {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      id: 1,
-      content:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ex ipsam accusamus illum nostrum repellendus asperiores facilis.',
-      isCompleted: false,
-    },
-  ])
+  const [tasks, setTasks] = useState<Task[]>([])
+  const [newTaskText, setNewTaskText] = useState('')
+
+  function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
+    setNewTaskText(event.target.value)
+  }
+
+  function handleCreateNewTask() {
+    setTasks((currentTasks) => [
+      ...currentTasks,
+      { id: currentTasks.length + 1, content: newTaskText, isCompleted: false },
+    ])
+    setNewTaskText('')
+  }
+
+  function handleEnterToCreateTask(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      handleCreateNewTask()
+    }
+  }
 
   function toggleTaskCompletion(taskId: number) {
     const updatedTasks = tasks.map((task) => {
@@ -54,8 +66,15 @@ function App() {
 
       <section className={styles.container}>
         <div className={styles.todoInputContainer}>
-          <Input />
-          <button>
+          <Input
+            value={newTaskText}
+            onChange={handleNewTaskTextChange}
+            onKeyDown={handleEnterToCreateTask}
+          />
+          <button
+            disabled={newTaskText.length === 0}
+            onClick={handleCreateNewTask}
+          >
             Criar <CirclePlus size={16} />
           </button>
         </div>
