@@ -4,8 +4,9 @@ import { Header } from './components/Header'
 import { Input } from './components/Input'
 
 import styles from './App.module.css'
-import { ChangeEvent, KeyboardEvent, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from 'react'
 import { TaskList } from './components/TaskList'
+import { useCookies } from 'react-cookie'
 
 export interface Task {
   id: number
@@ -14,8 +15,17 @@ export interface Task {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [cookies, setCookie] = useCookies(['tasks'])
+  const [tasks, setTasks] = useState<Task[]>(
+    cookies?.tasks ? cookies.tasks : [],
+  )
   const [newTaskText, setNewTaskText] = useState('')
+
+  useEffect(() => {
+    setCookie('tasks', tasks, {
+      maxAge: 2592000,
+    })
+  }, [setCookie, tasks])
 
   function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskText(event.target.value)
