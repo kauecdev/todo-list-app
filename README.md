@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# ToDo List App
+## Desafio 01 - Trilha de React - Rocketseat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto:
 
-Currently, two official plugins are available:
+A proposta do primeiro desafio era desenvolver uma aplicação do tipo TODO List, onde o usuário pode criar tarefas, editar seus estados (completa/incompleta) e deletá-las. O design foi desenvolvido pela própria Rocketseat e disponibilizado através de um link do Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias usadas:
 
-## Expanding the ESLint configuration
+- React
+- Typescript
+- CSS Modules
+- Lucide Icons
+- React Cookie
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Indo além:
 
-- Configure the top-level `parserOptions` property like this:
+Como recurso extra além dos requisitos do desafio resolvi adicionar também a funcionalidade de salvar os dados das tarefas em <strong>cookies</strong> na aplicação, assim o usuário não perderá a informação das tarefas criadas ao reiniciar/fechar a página da aplicação.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## DIY
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+OBS: Para executar a aplicação na sua máquina você irá precisar ter instalado o node.
+
+1. Baixe ou clone o projeto.
+2. Instale as dependências usando o comando `npm install` ou `npm i` no diretório do projeto.
+3. Use o comando `npm run dev` para inicar a aplicação.
+4. Divirta-se criado suas próprias tarefas!
+
+## Screenshots
+
+![image](https://github.com/kauecdev/todo-list-app-react-ts/assets/61801350/57fa7de8-0fe3-4b85-adb0-8f48522459b8)
+![image](https://github.com/kauecdev/todo-list-app-react-ts/assets/61801350/1e7dbe16-6a49-4371-b36e-23b7437331aa)
